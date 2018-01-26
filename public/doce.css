@@ -1,0 +1,167 @@
+#nav {
+    color: #666666;
+    border-bottom: solid 1px;
+    border-color: white;
+    font-size: 16px;
+}
+
+#marca {
+    margin-top: 50px;
+}
+
+#marcas {
+    margin-top: 30px;
+    text-align: center;
+}
+
+#scroll {
+    color: #666666;
+    border-bottom: solid 1px;
+    border-color: white;
+    font-size: 18px;
+}
+
+#nav:hover {
+    border-color: #ff0066;
+}
+
+#scroll:hover {
+    border-color: #ff0066;
+}
+
+#btn {
+    color: #ff0066;
+    border-color: #ff0066;
+}
+
+#btn:hover { 
+    background-color: #ff0066;
+    color: white;
+}
+
+#input {
+    background-color: #ff0066;
+    color: white;
+    border-color: #ff0066;
+}
+
+#input::-moz-placeholder {
+    color:white;
+}
+
+#input::-webkit-input-placeholder {
+    color:white;
+}
+
+#linha {
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+#nav-produto {
+    margin-top: 70px;
+}
+
+.main {
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.img-normal {
+    content: url(img/doce1.jpg);
+}
+
+.img-fixed {
+    content: url(img/doce2.jpg);
+}
+
+#meio {
+    padding-top: 50px;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff3586+0,ffadcc+51,ff3586+100 */
+background: #ff3586; /* Old browsers */
+background: -moz-linear-gradient(left, #ff3586 0%, #ffadcc 51%, #ff3586 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, #ff3586 0%,#ffadcc 51%,#ff3586 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, #ff3586 0%,#ffadcc 51%,#ff3586 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3586', endColorstr='#ff3586',GradientType=1 ); /* IE6-9 */
+}
+
+#ok {
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+#vertical {
+    border: 1px solid #bfbfbf;
+    border-radius: 10px;
+    margin-left: 40px;
+}
+
+#menu {
+    border: 1px solid #bfbfbf;
+    border-radius: 10px;
+    max-height: 60vh;
+    max-width: 20%;
+}
+
+#row {
+    margin-top: 25px;
+}
+
+#item {
+    font-size: 20px;
+}
+
+#item:hover {
+    color: #ff0066;
+    font-weight: bold;
+}
+
+.nav-link2 {
+    color: black;
+}
+
+.ativo {
+    color: #ff0066;
+    font-weight: bold;
+}
+
+.subitem {
+    color: black;
+    font-size: 15px;
+    padding-left: 40px;
+}
+
+.subitem:hover {    
+    text-decoration: none;
+    color: #888;
+}
+
+.card-img-top {
+    border-bottom: 2px solid #ff0066;
+}
+
+.card-title {
+    text-align: center;
+}
+
+#produto {
+    margin-top: 25px;
+    border: 1px solid #ccc;
+    max-width: 100%;
+    min-height: 333px;
+}
+
+ div.card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#titulo {
+    color: black;
+}
+
+#titulo:hover {
+    text-decoration: none;
+}
+
+#rodape {
+    margin-top: 50px;
+}
