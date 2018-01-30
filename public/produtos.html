@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app" ng-controller="MyCtrl">
 
 <head>
     <meta charset="utf-8">
@@ -11,13 +11,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
         crossorigin="anonymous">
+    <base href="/">
 </head>
 
-<body ng-app="app" ng-controller="MyCtrl">
+<body>
 
     <div class="main bg-white">
         <nav class="animar container navbar navbar-expand-lg navbar-light">
-            <a class="img-normal navbar-brand" href="/"></a>
+            <a class="img-normal navbar-brand" target="_self" href="/"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -26,7 +27,7 @@
             <div class="collapse navbar-collapse justify-content-around" id="navbarSupportedContent">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a id="nav" class="nav-link" href="">Produtos
+                        <a id="nav" class="nav-link" target="_self" href="./produtos.html">Produtos
                         </a>
                     </li>
                 </ul>
@@ -37,7 +38,7 @@
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a id="nav" class="nav-link" href="./marcas.html">Marcas</a>
+                        <a id="nav" class="nav-link" target="_self" href="./marcas.html">Marcas</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
@@ -77,9 +78,9 @@
                         Filtrar por marca
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="" ng-repeat="item in marca" ng-click="filtrarMarca(item.$id)">{{item.$id}}</a>
+                        <a class="dropdown-item" href="" ng-repeat="item in marca" ng-click="filtrarPorMarca(item.$id)">{{item.$id}}</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="" ng-click="filtrarMarca()">Outras marcas</a>
+                        <a class="dropdown-item" href="" ng-click="filtrarPorMarca()">Outras marcas</a>
                     </div>
                 </li>
             </ul>
@@ -88,6 +89,12 @@
             </form>
         </div>
     </nav>
+    <div class="container" ng-if="filtro">
+        <div class="row">
+            <span class="badge badge-primary" ng-click="rmFiltro()">{{filtro}}
+            </span>
+        </div>
+    </div>
     <div class="container">
         <div id="row" class="row">
             <div id="menu" class="col-md-3">
@@ -98,9 +105,9 @@
                         <div id="exampleAccordion1" class="collapse multi-collapse show" role="tabpanel">
                             <div class="mb-3">
                                 <nav class="nav flex-column">
-                                    <a class="subitem" href="./balas.html">Balas</a>
-                                    <a class="subitem" href="./chocolates.html">Chocolates</a>
-                                    <a class="subitem" href="./jujubas.html">Jujubas</a>
+                                    <a class="subitem" href="/balas">Balas</a>
+                                    <a class="subitem" href="/chocolates">Chocolates</a>
+                                    <a class="subitem" href="/jujubas">Jujubas</a>
                                 </nav>
                                 <hr>
                             </div>
@@ -112,7 +119,7 @@
                         <div id="exampleAccordion2" class="collapse multi-collapse show" role="tabpanel">
                             <div class="mb-3">
                                 <nav class="nav flex-column">
-                                    <a class="subitem" href="./amendoins.html">Amendoins</a>
+                                    <a class="subitem" href="/amendoins">Amendoins</a>
                                 </nav>
                                 <hr>
                             </div>
@@ -135,24 +142,14 @@
                 </ul>
             </div>
             <div id="vertical" class="col-md-9">
-                <div class="row">
-                    <div class="col-md-4" ng-repeat="item in data | filter: {$id: $ctrl.string}">
-                        <div id="produto" class="card" style="width: 18rem;" align="middle">
-                            <a id="titulo" href="">
-                                <img class="card-img-top" src={{item.url}} />
-                                <div class="card-body">
-                                    <h6 class="card-title">{{item.$id}}</h6>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                <div ng-view></div>
             </div>
         </div>
     </div>
 
     <!-- AngularJS -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.min.js"></script>
 
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
@@ -160,7 +157,7 @@
     <!-- AngularFire -->
     <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
-    <script src="app.js"></script>
+    <script src="produto.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
