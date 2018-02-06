@@ -1,6 +1,7 @@
 $(document).ready(function () {
-    $(".nav-link2").click(function () {
-        $(this).toggleClass("ativo");
+    $('.list-group-item').click(function () {
+        $('.list-group-item.active').removeClass('active');
+        $(this).addClass('active');
     })
     $(function () {
         $('[data-toggle="popover"]').popover({ html: true });

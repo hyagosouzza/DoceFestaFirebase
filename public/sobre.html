@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html ng-app="app" ng-controller="MyCtrl">
+<html>
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Doce e Festa: Marcas</title>
+    <title>Doce e Festa: Sobre a Loja</title>
     <link rel="icon" href="img/icon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="img/icon.ico" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="./doce.css">
@@ -29,7 +29,8 @@
             <div class="collapse navbar-collapse justify-content-around" id="navbarSupportedContent">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a id="nav" class="nav-link" href="./produtos.html">Produtos</a>
+                        <a id="nav" class="nav-link" href="./produtos.html">Produtos
+                        </a>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
@@ -39,46 +40,56 @@
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a id="nav" class="nav-link active-page" href="./marcas.html">Marcas</a>
+                        <a id="nav" class="nav-link" href="./marcas.html">Marcas</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a id="nav" class="nav-link" href="./sobre.html">A loja</a>
+                        <a id="nav" class="nav-link active-page" href="./sobre.html">A loja</a>
                     </li>
                 </ul>
             </div>
         </nav>
     </div>
-    <div class="container">
-        <div align="center">
-            <div class="row">
-                <div id="marca" class="col-md-4" ng-repeat="item in mr">
-                    <a target="_blank" href={{item.site}}>
-                        <img src={{item.url}}>
-                    </a>
+    <div class="container" id="content">
+        <div class="row">
+            <div id="menu" class="col-md-4">
+                <div class="list-group" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab"
+                        aria-controls="home">A Loja</a>
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab"
+                        aria-controls="profile">Empresa</a>
+                    <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab"
+                        aria-controls="messages">Colaboradores</a>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">1</div>
+                    <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">2</div>
+                    <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">3</div>
                 </div>
             </div>
         </div>
     </div>
+    <hr>
 
     <!-- AngularJS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.min.js"></script>
 
     <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
 
     <!-- AngularFire -->
     <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
-    <script src="app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
         crossorigin="anonymous"></script>
-    <script src="./script.js"></script>
 </body>
 
 </html>

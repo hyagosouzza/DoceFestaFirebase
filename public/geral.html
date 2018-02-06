@@ -1,10 +1,13 @@
 <div class="row">
-    <div class="col-md-4" ng-repeat="item in data | filter: {$id: $ctrl.string}">
+    <div ng-show="load === false">
+        <img src="img/load.gif">
+    </div>
+    <div ng-show="load === true" class="col-md-4 animated fadeIn" ng-repeat="item in list | filter: {name: $ctrl.string, marca: marca} | orderBy:'name'">
         <div id="produto" class="card" style="width: 18rem;" align="middle">
             <a id="titulo" href="">
                 <img class="card-img-top" src={{item.url}} />
                 <div class="card-body">
-                    <h6 class="card-title">{{item.$id}}</h6>
+                    <h6 class="card-title">{{item.name}}</h6>
                 </div>
             </a>
         </div>

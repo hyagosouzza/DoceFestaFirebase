@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Doce e Festa: Produtos</title>
+    <link rel="icon" href="img/icon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="img/icon.ico" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="./doce.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
     <!-- or -->
@@ -23,17 +25,16 @@
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse justify-content-around" id="navbarSupportedContent">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a id="nav" class="nav-link" target="_self" href="./produtos.html">Produtos
+                        <a id="nav" class="nav-link active-page" target="_self" href="./produtos.html">Produtos
                         </a>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a id="nav" class="nav-link" href="">Temas decorativos</a>
+                        <a id="nav" class="nav-link" target="_self" href="./temas.html">Temas decorativos</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
@@ -43,18 +44,13 @@
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a id="nav" class="nav-link" href="">Sobre a loja</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a id="nav" class="nav-link" href="">Contato</a>
+                        <a id="nav" class="nav-link" target="_self" href="./sobre.html">A loja</a>
                     </li>
                 </ul>
             </div>
         </nav>
     </div>
-    <nav id="nav-produto" class="container navbar navbar-expand-lg navbar-dark bg-danger">
+    <nav id="nav-produto" class="container navbar navbar-expand-lg navbar-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -75,12 +71,12 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">
-                        Filtrar por marca
+                        Filtrar por marca {{marca}}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="" ng-repeat="item in marca" ng-click="filtrarPorMarca(item.$id)">{{item.$id}}</a>
+                        <a class="dropdown-item" href="" ng-repeat="item in mr" ng-click="filtrarMarca(item.name)">{{item.name}}</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="" ng-click="filtrarPorMarca()">Outras marcas</a>
+                        <a class="dropdown-item" href="" ng-click="filtrarMarca()">Todas as marcas</a>
                     </div>
                 </li>
             </ul>
@@ -89,59 +85,28 @@
             </form>
         </div>
     </nav>
-    <div class="container" ng-if="filtro">
-        <div class="row">
-            <span class="badge badge-primary" ng-click="rmFiltro()">{{filtro}}
-            </span>
-        </div>
-    </div>
+
     <div class="container">
         <div id="row" class="row">
             <div id="menu" class="col-md-3">
-                <ul class="nav flex-column" id="exampleAccordion" data-children=".item">
-                    <li class="nav-item item">
-                        <a id="item" class="nav-link nav-link2 ativo " data-toggle="collapse" href="#exampleAccordion1" role="button" aria-expanded="true"
-                            aria-controls="exampleAccordion1">Guloseimas</a>
-                        <div id="exampleAccordion1" class="collapse multi-collapse show" role="tabpanel">
-                            <div class="mb-3">
-                                <nav class="nav flex-column">
-                                    <a class="subitem" href="/balas">Balas</a>
-                                    <a class="subitem" href="/chocolates">Chocolates</a>
-                                    <a class="subitem" href="/jujubas">Jujubas</a>
-                                </nav>
-                                <hr>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav-item item">
-                        <a id="item" class="nav-link nav-link2 ativo" data-toggle="collapse" href="#exampleAccordion2" role="button" aria-expanded="true"
-                            aria-controls="exampleAccordion2">Petiscos</a>
-                        <div id="exampleAccordion2" class="collapse multi-collapse show" role="tabpanel">
-                            <div class="mb-3">
-                                <nav class="nav flex-column">
-                                    <a class="subitem" href="/amendoins">Amendoins</a>
-                                </nav>
-                                <hr>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav-item item">
-                        <a id="item" class="nav-link nav-link2 ativo" data-toggle="collapse" href="#exampleAccordion3" role="button" aria-expanded="true"
-                            aria-controls="exampleAccordion3">Decorações</a>
-                        <div id="exampleAccordion3" class="collapse multi-collapse show" role="tabpanel">
-                            <div class="mb-3">
-                                <nav class="nav flex-column">
-                                    <a class="subitem" href="#">Descartáveis</a>
-                                    <a class="subitem" href="#">Confetes</a>
-                                    <a class="subitem" href="#">Adesivos</a>
-                                </nav>
-                                <hr>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+                <div class="panel list-group">
+                    <a href="/geral" class="list-group-item active" data-toggle="collapse" data-parent="#menu">Todos os Produtos</a>
+                    <a id="make" href="" class="list-group-item " data-toggle="collapse" data-target="#sm" data-parent="#menu">Guloseimas
+
+                    </a>
+                    <div id="sm" class="sublinks collapse">
+                        <a href="/balas" class="list-group-item small">Balas</a>
+                        <a href="/chocolates" class="list-group-item small">Chocolates</a>
+                        <a href="/jujubas" class="list-group-item small">Jujubas</a>
+                    </div>
+                    <a href="" class="list-group-item" data-toggle="collapse" data-target="#sl" data-parent="#menu">Petiscos
+                    </a>
+                    <div id="sl" class="sublinks collapse">
+                        <a href="/amendoins" class="list-group-item small">Amendoins</a>
+                    </div>
+                </div>
             </div>
-            <div id="vertical" class="col-md-9">
+            <div id="vertical" class="col-md-9" align="middle">
                 <div ng-view></div>
             </div>
         </div>
@@ -152,11 +117,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.min.js"></script>
 
     <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-firestore.js"></script>
 
     <!-- AngularFire -->
     <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
     <script src="produto.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>

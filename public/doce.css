@@ -1,7 +1,5 @@
 #nav {
     color: #666666;
-    border-bottom: solid 1px;
-    border-color: white;
     font-size: 16px;
 }
 
@@ -14,20 +12,23 @@
     text-align: center;
 }
 
-#scroll {
-    color: #666666;
-    border-bottom: solid 1px;
-    border-color: white;
-    font-size: 18px;
+.sticky-top {
+    opacity: 0.9;
 }
 
 #nav:hover {
-    border-color: #ff0066;
+    border-bottom: solid 1px #ff0066;
 }
 
-#scroll:hover {
-    border-color: #ff0066;
+.active-page {
+    border-bottom: solid 1px #ff0066;
+    font-weight: bold;
 }
+
+.linha-vertical {
+    height: 40px;/*Altura da linha*/
+    border-left: 1px solid #888;/* Adiciona borda esquerda na div como ser fosse uma linha.*/
+  }
 
 #btn {
     color: #ff0066;
@@ -60,10 +61,12 @@
 
 #nav-produto {
     margin-top: 70px;
+    background-color: #ff0066;
 }
 
 .main {
     border-bottom: 1px solid rgba(0,0,0,.1);
+    box-shadow: 0 0px 10px gray;
 }
 
 .img-normal {
@@ -92,47 +95,35 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3586', end
 #vertical {
     border: 1px solid #bfbfbf;
     border-radius: 10px;
-    margin-left: 40px;
+}
+
+.list-group-item.active {
+    background-color: mediumseagreen !important;
+    border-color: mediumseagreen !important;
+}
+
+.list-group-item {
+    color: #666;
+}
+
+.btn-group {
+    width: 100%;
 }
 
 #menu {
-    border: 1px solid #bfbfbf;
-    border-radius: 10px;
-    max-height: 60vh;
-    max-width: 20%;
+    margin-bottom: 25px;
+}
+
+.list-group-item:hover {
+    color:  teal;    
 }
 
 #row {
     margin-top: 25px;
 }
 
-#item {
-    font-size: 20px;
-}
-
-#item:hover {
-    color: #ff0066;
-    font-weight: bold;
-}
-
-.nav-link2 {
-    color: black;
-}
-
-.ativo {
-    color: #ff0066;
-    font-weight: bold;
-}
-
-.subitem {
-    color: black;
-    font-size: 15px;
+.list-group-item.small {
     padding-left: 40px;
-}
-
-.subitem:hover {    
-    text-decoration: none;
-    color: #888;
 }
 
 .card-img-top {
@@ -162,6 +153,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3586', end
     text-decoration: none;
 }
 
-.badge {
-    height: 20px;
+#content {
+    margin-top: 50px;
 }

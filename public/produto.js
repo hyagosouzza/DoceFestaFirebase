@@ -11,7 +11,46 @@
     };
     firebase.initializeApp(config);
 
+
     var app = angular.module("app", ["ngRoute", "firebase"]);
+
+    app.controller("MyCtrl", ["$scope", "$firebaseArray",
+        function ($scope, $firebaseArray) {
+
+            var db = firebase.firestore();
+
+            $scope.list = [];
+            $scope.load = false;
+            db.collection("Produtos")
+                .onSnapshot(function (querySnapshot) {
+                    querySnapshot.forEach(function (doc) {
+                        const data = doc.data()
+                        data.id = doc.id;
+                        $scope.list.push(data);
+                    });
+                    $scope.load = true;
+                });
+
+            $scope.mr = [];
+            db.collection("Marcas")
+                .onSnapshot(function (querySnapshot) {
+                    querySnapshot.forEach(function (doc) {
+                        const data = doc.data()
+                        data.id = doc.id;
+                        $scope.mr.push(data);
+                    });
+                });
+
+                $scope.filtrarMarca = function(marca) {
+                    $scope.marca = marca;
+                }
+
+            var refMarca = firebase.database().ref().child('Marcas');
+
+            var objMarca = $firebaseArray(refMarca);
+
+        }
+    ]);
 
     app.config(function ($routeProvider, $locationProvider) {
         $routeProvider
@@ -27,41 +66,13 @@
             .when("/amendoins", {
                 templateUrl: "./amendoins.html"
             })
+            .when("/add", {
+                templateUrl: "./add.html"
+            })
             .otherwise({
                 templateUrl: "./geral.html"
             });
         $locationProvider.html5Mode(true);
     });
-
-    app.controller("MyCtrl", ["$scope", "$firebaseArray",
-        function ($scope, $firebaseArray) {
-
-            var ref = firebase.database().ref().child('Produtos');
-            var refMarca = firebase.database().ref().child('Marcas');
-
-            var objMarca = $firebaseArray(refMarca);
-            var obj = $firebaseArray(ref);
-
-            $scope.marca = objMarca;
-            $scope.data = obj;
-
-            $scope.filtrarPorMarca = function (marca) {
-                if (marca != null) {
-                    $scope.data = $firebaseArray(ref.orderByChild('marca').equalTo(marca));
-                    $scope.filtro = marca;
-                }
-                else {
-                    $scope.data = obj;
-                }
-            }
-
-            $scope.rmFiltro = function () {
-                $scope.data = obj;
-                $scope.filtro = null;
-            }
-
-        }
-    ]);
-
 
 }());
