@@ -1,8 +1,7 @@
 <div class="row">
-    <div ng-show="load === false" class="container"><img  src="img/load.gif"></div>
-    <div class="col-md-4 animated fadeIn" ng-repeat="item in list | filter: {name: $ctrl.string, marca: marca} | orderBy:'name'">
+    <div class="col-md-4 animated fadeIn container" ng-repeat="item in list | filter: {name: $ctrl.string, marca: marca} | orderBy:'name'">
         <div id="produto" class="card" style="width: 18rem;" align="middle">
-            <a id="titulo" href="">
+            <a id="titulo">
                 <img class="card-img-top" src={{item.url}} />
                 <div class="card-body">
                     <h6 class="card-title">{{item.name}}</h6>

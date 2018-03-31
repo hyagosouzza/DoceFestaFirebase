@@ -18,8 +18,8 @@
 
 <body>
 
-    <div class="main bg-white">
-        <nav class="animar container navbar navbar-expand-lg navbar-light">
+    <div id="opa" class="main bg-white">
+        <nav class="container navbar navbar-expand-lg navbar-light">
             <a class="img-normal navbar-brand" target="_self" href="/"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -50,6 +50,10 @@
             </div>
         </nav>
     </div>
+    <div align="middle">
+        <img src="img/prod.png">
+    </div>
+
     <nav id="nav-produto" class="container navbar navbar-expand-lg navbar-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -89,25 +93,73 @@
     <div class="container">
         <div id="row" class="row">
             <div id="menu" class="col-md-3">
-                <div class="panel list-group">
-                    <a href="/geral" class="list-group-item active" data-toggle="collapse" data-parent="#menu">Todos os Produtos</a>
-                    <a id="make" href="" class="list-group-item " data-toggle="collapse" data-target="#sm" data-parent="#menu">Guloseimas
-
+                <div class="list-group">
+                    <a href="/geral" class="list-group-item list-group-item-action ativo">
+                        Produtos
                     </a>
-                    <div id="sm" class="sublinks collapse">
-                        <a href="/balas" class="list-group-item small">Balas</a>
-                        <a href="/chocolates" class="list-group-item small">Chocolates</a>
-                        <a href="/jujubas" class="list-group-item small">Jujubas</a>
-                    </div>
-                    <a href="" class="list-group-item" data-toggle="collapse" data-target="#sl" data-parent="#menu">Petiscos
-                    </a>
-                    <div id="sl" class="sublinks collapse">
-                        <a href="/amendoins" class="list-group-item small">Amendoins</a>
-                    </div>
+                    <a href="/chocolates" class="list-group-item list-group-item-action">Chocolates</a>
+                    <a href="/balas" class="list-group-item list-group-item-action">Balas</a>
+                    <a href="#" class="list-group-item list-group-item-action">Forminhas</a>
+                    <a href="#" class="list-group-item list-group-item-action ">Temáticos</a>
+                    <a href="#" class="list-group-item list-group-item-action ">Descartáveis</a>
+                    <a href="#" class="list-group-item list-group-item-action ">Artigos Festa</a>
+                    <a href="#" class="list-group-item list-group-item-action ">Artigos Confeiteiro</a>
+                    <a href="#" class="list-group-item list-group-item-action ">Velas</a>
+                    <a href="#" class="list-group-item list-group-item-action ">Marshmallow</a>
+                    <a href="#" class="list-group-item list-group-item-action ">Balões</a>
+                    <a href="#" class="list-group-item list-group-item-action ">Utilidades</a>
+                    <a href="#" class="list-group-item list-group-item-action ">Locação</a>
+                    <a href="#" class="list-group-item list-group-item-action ">Lembrancinhas</a>
+                    <a href="#" class="list-group-item list-group-item-action ">Letras e Números</a>
                 </div>
             </div>
             <div id="vertical" class="col-md-9" align="middle">
+                <div class="align-self-center" ng-show="load === false">
+                    <img src="img/load.gif">
+                </div>
                 <div ng-view></div>
+            </div>
+        </div>
+    </div>
+    <div id="rodape">
+        <div class="container">
+            <div class="row" align="middle">
+                <div class="col-md-4 align-self-center">
+                    <a target="_blank" href="https://www.facebook.com/docefesta02/">
+                        <img src="img/face1.png">
+                    </a>
+                    <a target="_blank" href="https://www.instagram.com/docefesta0/" style="padding-left:20px">
+                        <img src="img/insta1.png">
+                    </a>
+                    <a href="mailto:docefesta.jsa@gmail.com" style="padding-left:20px">
+                        <img src="img/gmail.png">
+                    </a>
+                </div>
+                <div class="col-md-4 align-self-center">
+                    <br>
+                    <img src="img/doce1.jpg" alt="">
+                    <br>
+                    <br>
+                    <h6>
+                        <span>
+                            <img src="img/point.png">
+                        </span>Av. José Bonifácio, Nº373 - Central, Jussara - GO, 76270-000</h6>
+                </div>
+                <div class=" col-md-4 align-self-center">
+                    <h5 class="d-inline-flex p-2">Contato</h5>
+                    <h6>
+                        <span>
+                            <img src="img/phone.png" alt="">
+                        </span>(62) 3373-2854</h6>
+                    <h6 style="padding-left:9px">
+                        <span>
+                            <img src="img/whats.png" alt="">
+                        </span>(62) 93373-2854</h6>
+                    <h6 style="padding-left:75px">
+                        <span>
+                            <img src="img/mail.png" alt="">
+                        </span>docefesta.jsa@gmail.com</h6>
+                </div>
             </div>
         </div>
     </div>

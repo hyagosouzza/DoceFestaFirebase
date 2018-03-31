@@ -41,11 +41,12 @@
                     });
                 });
 
-                $scope.filtrarMarca = function(marca) {
-                    $scope.marca = marca;
-                }
 
-            var refMarca = firebase.database().ref().child('Marcas');
+            $scope.filtrarMarca = function (marca) {
+                $scope.marca = marca;
+            }
+
+            var refMarca = firebase.database().ref();
 
             var objMarca = $firebaseArray(refMarca);
 

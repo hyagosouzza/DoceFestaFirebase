@@ -27,7 +27,7 @@
                     });
                 });
 
-            var refMarca = firebase.database().ref().child('Marcas');
+            var refMarca = firebase.database().ref();
 
             var objMarca = $firebaseArray(refMarca);
 

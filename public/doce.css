@@ -12,8 +12,10 @@
     text-align: center;
 }
 
-.sticky-top {
-    opacity: 0.9;
+#rodape {
+    margin-top: 40px;
+    border-top: 1px solid rgba(0,0,0,.1);
+    height: 210px;
 }
 
 #nav:hover {
@@ -60,13 +62,18 @@
 }
 
 #nav-produto {
-    margin-top: 70px;
     background-color: #ff0066;
+}
+
+.capa-produto {
+    margin-bottom: 10px;
+    margin-top: 40px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .main {
     border-bottom: 1px solid rgba(0,0,0,.1);
-    box-shadow: 0 0px 10px gray;
+    box-shadow: 0 1px 10px gray;
 }
 
 .img-normal {
@@ -74,7 +81,11 @@
 }
 
 .img-fixed {
-    content: url(img/doce2.jpg);
+    content: url(img/oie.png);
+}
+
+#opa {
+    background-color: rgba(255,255,255,.85) !important;
 }
 
 #meio {
@@ -95,6 +106,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3586', end
 #vertical {
     border: 1px solid #bfbfbf;
     border-radius: 10px;
+    padding-bottom: 15px;
 }
 
 .list-group-item.active {
@@ -103,8 +115,27 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3586', end
     font-weight: bold;
 }
 
+.list-group-item.ativo, .list-group-item.ativo:hover {
+    background-color: #660066 !important;
+    border-color: #660066 !important;
+    font-weight: bold;
+    color: #fff;
+}
+
 .list-group-item {
     color: #666;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255,.7) !important;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover{
+    color: rgba(255,255,255,.85) !important;
+}
+
+.navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .show>.nav-link{
+    color: #fff !important;
 }
 
 .btn-group {
@@ -146,6 +177,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3586', end
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.card-marca {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;    
+}
+
 #titulo {
     color: black;
 }
@@ -157,3 +192,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3586', end
 #content {
     margin-top: 50px;
 }
+ .d-inline-flex.p-2 {
+     color: #ff0066;
+     font-weight: bold;
+     border-bottom: 1px solid #ff6004;
+    margin-bottom: 20px;
+ }
+
+ @media (max-width:810px){
+    div.col-md-4.align-self-center {
+        margin-top: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #bfbfbf;
+    }
+  }
