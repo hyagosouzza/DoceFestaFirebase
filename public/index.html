@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app" ng-controller="MyCtrl">
 
 <head>
   <meta charset="utf-8">
@@ -97,7 +97,44 @@
             <img src="img/festa.png">
           </a>
           <br>
-          <a id="ok" class="btn btn-success" href="mailto:docefesta.jsa@gmail.com">Faça seu orçamento</a>
+          <a id="ok" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Faça seu orçamento</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Enviar Orçamento</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label class="col-form-label">Nome:</label>
+              <input type="text" class="form-control" id="recipient-name">
+            </div>
+            <div class="form-group">
+              <label class="col-form-label">Email:</label>
+              <input type="text" class="form-control" id="recipient-name">
+            </div>
+            <div class="form-group">
+              <label class="col-form-label">Telefone:</label>
+              <input type="text" class="form-control" id="recipient-name">
+            </div>
+            <div class="form-group">
+              <label for="message-text" class="col-form-label">Mensagem:</label>
+              <textarea class="form-control" id="message-text"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Sair</button>
+          <button type="button" class="btn btn-primary">Enviar</button>
         </div>
       </div>
     </div>
@@ -113,7 +150,7 @@
           <a target="_blank" href="https://www.instagram.com/docefesta0/" style="padding-left:20px">
             <img src="img/insta1.png">
           </a>
-          <a href="mailto:docefesta.jsa@gmail.com" style="padding-left:20px">
+          <a href="" data-toggle="modal" data-target="#exampleModa2" style="padding-left:20px">
             <img src="img/gmail.png">
           </a>
         </div>
@@ -145,9 +182,47 @@
       </div>
     </div>
   </div>
+
+  <div class="modal fade" id="exampleModa2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabe2" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Enviar Mensagem</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label class="col-form-label">Nome:</label>
+              <input type="text" required="required" class="form-control" id="recipient-name">
+            </div>
+            <div class="form-group">
+              <label class="col-form-label">Email:</label>
+              <input type="email" required="required" class="form-control" id="recipient-name">
+            </div>
+            <div class="form-group">
+              <label class="col-form-label">Telefone:</label>
+              <input type="text" required="required" class="form-control" ng-model="maskPhone" mask="(99)99999-9999">
+            </div>
+            <div class="form-group">
+              <label for="message-text" class="col-form-label">Mensagem:</label>
+              <textarea required="required" class="form-control" id="message-text"></textarea>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Sair</button>
+              <input type="submit" class="btn btn-primary" value="Enviar">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- AngularJS -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.min.js"></script>
+  <script src="ngMask.min.js"></script>  
 
   <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
@@ -162,6 +237,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
     crossorigin="anonymous"></script>
   <script src="./script.js"></script>
+  
 </body>
 
 </html>

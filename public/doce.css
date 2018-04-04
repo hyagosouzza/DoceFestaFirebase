@@ -101,6 +101,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3586', end
 #ok {
     margin-top: 10px;
     margin-bottom: 50px;
+    color: #fff;
 }
 
 #vertical {
